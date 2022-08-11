@@ -9,35 +9,24 @@ public class Employee extends Person{
 	
 
     public Employee(String name,int age,String gender,String address,String  telephoneNum,int department,String jobTitle,int yearHire,double  salary){
-		this.name = name;
-		this.socialNum = lastSocialNum +1;
-		lastSocialNum = lastSocialNum +1;
-		this.age = age;
-		this.gender = gender;
-		this.address = address;
-		this.telephoneNum = telephoneNum;
-		this.department = department;
-		this.jobTitle = jobTitle;
-		this.yearHire = yearHire;
+		personInfo(name, age, gender, address, telephoneNum);
+		employeeInfo(department,jobTitle,yearHire);
 		this.salary = salary;
 		
 	}
 
-    public Employee(String name, int age,String gender,String address,String  telephoneNum,int department,String jobTitle,int yearHire,double  hourlyRate,double hoursWorked,double unionDues){
-		this.name = name;
-		this.socialNum = lastSocialNum +1;
-		lastSocialNum = lastSocialNum +1;
-		this.age = age;
-		this.gender = gender;
-		this.address = address;
-		this.telephoneNum = telephoneNum;
+    public Employee(String name, int age,String gender,String address,String  telephoneNum,int department,String jobTitle,int yearHire,double  hourlyRate,double hoursWorked){
+		personInfo(name, age, gender, address, telephoneNum);
+		employeeInfo(department,jobTitle,yearHire);
+		this.hourlyRate = hourlyRate;
+		this.hoursWorked = hoursWorked;
+		
+	}
+
+	public void employeeInfo(int department,String jobTitle,int yearHire){
 		this.department = department;
 		this.jobTitle = jobTitle;
 		this.yearHire = yearHire;
-		this.hourlyRate = hourlyRate;
-		this.hoursWorked = hoursWorked;
-		this.unionDues = unionDues;
-		
 	}
 
 

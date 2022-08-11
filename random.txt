@@ -1,1 +1,4 @@
 fix the return to main screen
+fix all the employee shit
+fix the exception handling
+fix the grammars
