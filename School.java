@@ -9,7 +9,9 @@ public class School{
     public static void main(String[] args){
 
         System.out.println("Enter the school name: ");
+        System.out.println();
         schoolName = input.nextLine();
+        System.out.println();
         
         System.out.println("Welcome to "+ schoolName + ". We are going to build the population for " + schoolName + " with your help.");
 
@@ -26,7 +28,9 @@ public class School{
             //can return a 1 or 2 signifying either student or employee chosen
             if (studentsOrTeacher == 1){ //student was chosen
                 while(studentsList. isEmpty()==true){
+                    System.out.println();
                     System.out.println("You dont have any students in your school!");
+                    System.out.println();
                     studentsList.add(addStudent());
                 }
                 int studentMainScreen = screen2("student");
@@ -70,7 +74,7 @@ public class School{
                     showAllEmployeeInfo();
                 }
                 else if (employeeMainScreen == 2){//if you dont know the students id was chosen
-                    displayStudents();
+                    displayEmployees();
                 }
                 else if (employeeMainScreen == 3){//if you would like to add or remove a student was chosen
                     System.out.println("Press 1 if you would like to add a new employee");
@@ -175,7 +179,7 @@ public class School{
     }
 
     public static Student addStudent( ){
-        System.out.println("Enter the name of the new student");
+        System.out.println("Enter the name of a new student");
         input.nextLine();
         String newName = input.nextLine();
         System.out.println("Enter "+newName+"s age");
@@ -200,7 +204,7 @@ public class School{
     }
 
     public static Employee addEmployee(){
-        System.out.println("Enter the name of the new employee");
+        System.out.println("Enter the name of a new employee");
         input.nextLine();
         String newName = input.nextLine();
         System.out.println("Enter "+newName+"s age");
@@ -211,11 +215,11 @@ public class School{
         System.out.println("Enter "+newName+"s address");
         String address = input.nextLine();
         System.out.println("Enter  "+ newName+"s telephone number");
-        input.nextLine();
 		String telephoneNum = input.nextLine();
         System.out.println("Enter "+newName+"s department number");
         int department = input.nextInt();
         System.out.println("Enter "+newName+"s job title");
+        input.nextLine();
         String jobTitle = input.nextLine();
         System.out.println("Enter "+newName+"s year of hire");
         int yearHire = input.nextInt();
@@ -325,13 +329,13 @@ public class School{
                 System.out.println("Department: "+employee.department);
                 System.out.println("Job Title: "+employee.jobTitle);
                 System.out.println("Year of Hire: "+employee.yearHire);
-                try{
+                if(employee.professional == true){
                     System.out.println("Salary: "+ employee.salary);
-                }catch(Exception e){
+                }
+                else{
                     System.out.println("Hourly Rate: "+ employee.salary);
                     System.out.println("Hours Worked: "+ employee.hoursWorked);
                 }
-                System.out.println("gotta fix prof and unprof");
                 System.out.println();
                 return;
             }
